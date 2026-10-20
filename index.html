@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Báo Cáo Nghiên Cứu Văn Học Trung Đại - Chi Đoàn 11A4 Nhóm 1</title>
+    <title>Báo Cáo Nghiên Cứu Văn Học - Chi Đoàn 11A4 Nhóm 1</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Thư viện tạo mã QR -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         :root {
             --primary-color: #8b0000;
@@ -28,7 +26,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.8;
-            user-select: none; /* Khóa bôi đen văn bản cơ bản */
+            user-select: none;
             -webkit-user-select: none;
         }
 
@@ -61,10 +59,10 @@
         }
 
         .main-container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 30px auto;
             background: var(--card-bg);
-            padding: 40px 50px;
+            padding: 40px;
             border-radius: 8px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.05);
             border: 1px solid var(--border-color);
@@ -73,92 +71,43 @@
         .cover-page {
             text-align: center;
             border-bottom: 2px double var(--border-color);
-            padding-bottom: 40px;
-            margin-bottom: 40px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
         }
 
         .sub-header {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #666;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .main-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             line-height: 1.3;
             font-weight: 700;
         }
 
-        .topic-title {
-            font-size: 1.3rem;
-            font-style: italic;
-            color: #444;
-            background-color: #fcf8f2;
-            padding: 15px 20px;
-            border-left: 4px solid var(--secondary-color);
-            margin: 25px 0;
-            display: inline-block;
-            text-align: left;
-        }
-
-        .content-section {
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            margin-bottom: 18px;
-            text-align: justify;
-            font-size: 1.05rem;
-        }
-
-        .poem-box {
-            background-color: #fbf9f4;
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            margin: 25px 0;
-            text-align: center;
-            font-style: italic;
-            border-radius: 5px;
-        }
-
-        .poem-box p {
-            text-align: center;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
         /* Khung Ebook Flipbook */
         .ebook-container {
-            margin: 40px 0;
+            margin-bottom: 40px;
             background: #fff;
-            padding: 15px;
+            padding: 10px;
             border: 1px solid var(--border-color);
             border-radius: 8px;
         }
 
-        /* Danh sách thành viên */
+        /* Danh sách thành viên nhóm tác giả */
         .team-section {
             background-color: #faf8f5;
             padding: 30px;
             border-radius: 8px;
-            margin-top: 50px;
             border: 1px solid var(--border-color);
         }
 
@@ -167,8 +116,9 @@
             text-align: center;
             color: var(--primary-color);
             margin-bottom: 20px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .team-grid {
@@ -179,53 +129,25 @@
 
         .team-member {
             background: #fff;
-            padding: 10px 15px;
+            padding: 12px 16px;
             border-radius: 5px;
             border: 1px solid #eee;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.95rem;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
         .team-member.leader {
-            border-left: 3px solid var(--primary-color);
-            font-weight: 600;
+            border-left: 4px solid var(--primary-color);
+            font-weight: 700;
+            background: #fffdfa;
         }
 
         .role {
             color: #777;
             font-size: 0.85rem;
-        }
-
-        /* Khu vực tạo QR Code */
-        .qr-section {
-            margin-top: 40px;
-            text-align: center;
-            background: #fcf8f2;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .qr-section h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        #qrcode {
-            display: flex;
-            justify-content: center;
-            margin-top: 15px;
-        }
-
-        #qrcode img {
-            padding: 10px;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 6px;
         }
 
         footer {
@@ -234,16 +156,19 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem;
             color: #777;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         @media (max-width: 600px) {
             .main-container {
-                padding: 20px;
+                padding: 20px 15px;
                 margin: 10px;
             }
             .main-title {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
+            }
+            .heyzine-flipbook {
+                height: 450px !important;
             }
         }
     </style>
@@ -253,51 +178,28 @@
     <header>
         <div class="nav-container">
             <div class="logo">Chi Đoàn 11A4 • Nhóm 1</div>
-            <div style="font-family: 'Montserrat'; font-size: 0.85rem; color: #fff;">Ebook Báo Cáo</div>
+            <div style="font-family: 'Montserrat'; font-size: 0.85rem; color: #fff;">Báo Cáo Điện Tử</div>
         </div>
     </header>
 
     <div class="main-container">
-        <!-- TRANG BÌA -->
+        <!-- TRANG BÌA GIỚI THIỆU -->
         <section class="cover-page">
             <div class="sub-header">Báo Cáo Nghiên Cứu Văn Học Trung Đại Việt Nam</div>
             <h1 class="main-title">LÝ GIẢI Ý NGHĨA HÌNH ẢNH BÁNH TRÔI NƯỚC</h1>
             <div class="sub-header">Trong bài thơ "Bánh Trôi Nước" — Hồ Xuân Hương</div>
-            
-            <div class="topic-title">
-                "Thân em vừa trắng lại vừa tròn<br>
-                Bảy nổi ba chìm với nước non..."
-            </div>
         </section>
 
-        <!-- NỘI DUNG BÁO CÁO -->
-        <section class="content-section">
-            <h2>I. Đặt Vấn Đề</h2>
-            <p>Trong dòng chảy của văn học trung đại Việt Nam, Hồ Xuân Hương nổi lên như một hiện tượng độc đáo — "Bà chúa Thơ Nôm". Bài thơ <em>Bánh trôi nước</em> là một tác phẩm tiêu biểu cho tài năng sáng tạo nghệ thuật và tinh thần nhân đạo sâu sắc của bà.</p>
-
-            <div class="poem-box">
-                <p><strong>Bánh Trôi Nước</strong></p>
-                <p>Thân em vừa trắng lại vừa tròn,</p>
-                <p>Bảy nổi ba chìm với nước non.</p>
-                <p>Rắn nát mặc dầu tay kẻ nặn,</p>
-                <p>Mà em vẫn giữ tấm lòng son.</p>
-            </div>
-
-            <h2>II. Tầng Ý Nghĩa Tự Nhiên & Ẩn Dụ</h2>
-            <p>Bài thơ mang hai tầng ý nghĩa song song: Vừa tả thực quy trình làm bánh trôi nước truyền thống, vừa là bức chân dung tượng trưng cho vẻ đẹp, phẩm chất cao quý cùng số phận chìm nổi, lênh đênh nhưng vẫn giữ vững tấm lòng son sắt của người phụ nữ Việt Nam trong xã hội phong kiến.</p>
-        </section>
-
-        <!-- KHUNG SÁCH LẬT EBOOK (HEYZINE) -->
+        <!-- 1. BÁO CÁO BẢN ĐIỆN TỬ (EBOOK FLIPBOOK) -->
         <section class="ebook-container">
-            <h2 style="margin-top: 0; text-align: center; font-size: 1.2rem;">📖 Sách Lật Trực Tuyến (Ebook)</h2>
             <div class="heyzine-flipbook" style="width: 100%; height: 600px;">
                 <a href="https://heyzine.com/flip-book/2bf20b998b.html">View the flipbook</a>
             </div>
         </section>
 
-        <!-- TRANG THÀNH VIÊN NHÓM -->
+        <!-- 2. THÔNG TIN NHÓM TÁC GIẢ -->
         <section class="team-section">
-            <div class="team-title">Hội Đồng Nghiên Cứu & Thực Hiện</div>
+            <div class="team-title">Thông Tin Nhóm Tác Giả</div>
             <div class="team-grid">
                 <div class="team-member leader">
                     <span>NGÔ MINH NAM</span>
@@ -338,45 +240,23 @@
             </div>
         </section>
 
-        <!-- TỰ ĐỘNG TẠO MÃ QR TỪ LINK TRANG WEB -->
-        <section class="qr-section">
-            <h3>Mã QR Truy Cập Nhanh Trang Web</h3>
-            <p style="font-size: 0.9rem; color: #555;">Quét mã bên dưới bằng điện thoại để mở trực tiếp báo cáo:</p>
-            <div id="qrcode"></div>
-        </section>
-
         <footer>
-            © 2026 Bản quyền thuộc về Chi Đoàn 11A4 - Nhóm 1 • Ebook Báo Cáo Văn Học
+            © 2026 Bản quyền thuộc về Chi Đoàn 11A4 - Nhóm 1
         </footer>
     </div>
 
     <!-- Script nhúng Heyzine -->
     <script async src="https://heyzine.com/release/embed.min.js"></script>
 
-    <!-- Script bảo mật & tự động tạo QR -->
+    <!-- Script bảo mật chống copy & chuột phải -->
     <script>
-        // 1. Tự động tạo mã QR dựa vào URL hiện tại của trang web
-        window.addEventListener('DOMContentLoaded', (event) => {
-            var currentUrl = window.location.href;
-            new QRCode(document.getElementById("qrcode"), {
-                text: currentUrl,
-                width: 150,
-                height: 150,
-                colorDark: "#8b0000",
-                colorLight: "#ffffff",
-                correctLevel: QRCode.CorrectLevel.H
-            });
-        });
-
-        // 2. Chống nhấn chuột phải
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });
 
-        // 3. Chống phím tắt F12, Ctrl+U, Ctrl+S, Ctrl+C
         document.addEventListener('keydown', function(e) {
             if (
-                e.keyCode === 123 || // F12
+                e.keyCode === 123 || 
                 (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || 
                 (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 67 || e.keyCode === 65))
             ) {
