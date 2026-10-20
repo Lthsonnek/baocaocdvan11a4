@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Nghiên Cứu Văn Học Trung Đại - Chi Đoàn 11A4 Nhóm 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8b0000;
+            --secondary-color: #d4af37;
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-color: #2c2c2c;
+            --border-color: #e0dacc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Merriweather', Georgia, serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            padding: 0;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Container Chính */
+        .main-container {
+            max-width: 850px;
+            margin: 30px auto;
+            background: var(--card-bg);
+            padding: 40px 50px;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Trang Bìa */
+        .cover-page {
+            text-align: center;
+            border-bottom: 2px double var(--border-color);
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+
+        .sub-header {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #666;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .topic-title {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #444;
+            background-color: #fcf8f2;
+            padding: 15px 20px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 25px 0;
+            display: inline-block;
+            text-align: left;
+        }
+
+        /* Nội dung Báo cáo */
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            font-size: 1.05rem;
+        }
+
+        .poem-box {
+            background-color: #fbf9f4;
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        .poem-box p {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Danh sách thành viên */
+        .team-section {
+            background-color: #faf8f5;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 50px;
+            border: 1px solid var(--border-color);
+        }
+
+        .team-title {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+        }
+
+        .team-member {
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .team-member.leader {
+            border-left: 3px solid var(--primary-color);
+            font-weight: 600;
+        }
+
+        .role {
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 40px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            .main-container {
+                padding: 20px 20px;
+                margin: 10px;
+            }
+            .main-title {
+                font-size: 1.6rem;
+            }
+            .topic-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Chi Đoàn 11A4 • Nhóm 1</div>
+            <div style="font-family: 'Montserrat'; font-size: 0.85rem; color: #fff;">Ebook Báo Cáo</div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- TRANG BÌA -->
+        <section class="cover-page">
+            <div class="sub-header">Báo Cáo Nghiên Cứu Văn Học Trung Đại Việt Nam</div>
+            <h1 class="main-title">LÝ GIẢI Ý NGHĨA HÌNH ẢNH BÁNH TRÔI NƯỚC</h1>
+            <div class="sub-header">Trong bài thơ "Bánh Trôi Nước" — Hồ Xuân Hương</div>
+            
+            <div class="topic-title">
+                "Thân em vừa trắng lại vừa tròn<br>
+                Bảy nổi ba chìm với nước non..."
+            </div>
+        </section>
+
+        <!-- NỘI DUNG BÁO CÁO -->
+        <section class="content-section">
+            <h2>I. Đặt Vấn Đề</h2>
+            <p>Trong dòng chảy của văn học trung đại Việt Nam, Hồ Xuân Hương nổi lên như một hiện tượng độc đáo — "Bà chúa Thơ Nôm". Bài thơ <em>Bánh trôi nước</em> là một tác phẩm tiêu biểu cho tài năng sáng tạo nghệ thuật và tinh thần nhân đạo sâu sắc của bà, thông qua hình ảnh một món ăn dân dã để gửi gắm nhiều tầng ý nghĩa sâu xa.</p>
+
+            <div class="poem-box">
+                <p><strong>Bánh Trôi Nước</strong></p>
+                <p>Thân em vừa trắng lại vừa tròn,</p>
+                <p>Bảy nổi ba chìm với nước non.</p>
+                <p>Rắn nát mặc dầu tay kẻ nặn,</p>
+                <p>Mà em vẫn giữ tấm lòng son.</p>
+            </div>
+
+            <h2>II. Tầng Ý Nghĩa Tự Nhiên (Nghĩa Thực)</h2>
+            <p>Ở tầng nghĩa thứ nhất, bài thơ mô tả chân thực quy trình làm và đặc điểm của chiếc bánh trôi nước — một món ăn truyền thống của người Việt:</p>
+            <p>• <strong>Hình dáng:</strong> Viên bánh được nặn bằng bột bột nếp có màu trắng, hình dáng tròn trịa (<em>"vừa trắng lại vừa tròn"</em>).</p>
+            <p>• <strong>Cách luộc bánh:</strong> Khi thả vào nồi nước sôi, bánh chìm xuống rồi nổi lên khi đã chín (<em>"Bảy nổi ba chìm"</em>).</p>
+            <p>• <strong>Kỹ thuật nặn:</strong> Bánh mềm hay cứng, tròn hay méo phụ thuộc hoàn toàn vào tay người nhào bột và nặn bánh (<em>"Rắn nát mặc dầu tay kẻ nặn"</em>).</p>
+            <p>• <strong>Nhân bánh:</strong> Bên trong viên bánh là viên đường phay (đường thốt nốt/đường mật) có màu đỏ hồng (<em>"tấm lòng son"</em>).</p>
+
+            <h2>III. Tầng Ý Nghĩa Ẩn Dụ (Nghĩa Biểu Tượng)</h2>
+            <p>Bên cạnh nghĩa thực, ẩn sau hình ảnh chiếc bánh trôi nước là tầng ý nghĩa nhân văn sâu sắc về vẻ đẹp và số phận của người phụ nữ trong xã hội phong kiến:</p>
+            <p><strong>1. Tôn vinh vẻ đẹp hình thức và tâm hồn:</strong> Mở đầu bằng cụm từ xưng hô truyền thống <em>"Thân em"</em>, Hồ Xuân Hương ca ngợi vẻ đẹp ngoại hình đầy đặn, duyên dáng và tâm hồn thủy chung, sắt son, thuần khiết của người phụ nữ.</p>
+            <p><strong>2. Phản ánh số phận chìm nổi, lệ thuộc:</strong> Thành ngữ <em>"bảy nổi ba chìm"</em> diễn tả số phận lênh đênh, gian ân và không có quyền tự quyết định cuộc đời mình trong xã hội trọng nam khinh nữ. Cuộc đời họ vui hay buồn, hạnh phúc hay khổ đau hoàn toàn bị phụ thuộc vào sự định đoạt của kẻ khác.</p>
+            <p><strong>3. Khẳng định bản lĩnh và phẩm chất cao quý:</strong> Dù đối mặt với nghịch cảnh, người phụ nữ vẫn giữ vững "tấm lòng son" — sự chung thủy, dũng cảm và lòng tự trọng cao đẹp.</p>
+
+            <h2>IV. Kết Luận</h2>
+            <p>Bằng thể thơ thất ngôn tứ tuyệt đường luật ngắn gọn, ngôn ngữ Nom bình dị cùng nghệ thuật ẩn dụ đa tầng, bài thơ <em>Bánh trôi nước</em> không chỉ tôn vinh món ăn dân tộc mà còn là bài ca nhân đạo sâu sắc, cất lên tiếng nói đòi quyền sống và trân trọng phẩm giá người phụ nữ Việt Nam xưa.</p>
+        </section>
+
+        <!-- TRANG THÀNH VIÊN NHÓM -->
+        <section class="team-section">
+            <div class="team-title">Hội Đồng Nghiên Cứu & Thực Hiện</div>
+            <div class="team-grid">
+                <div class="team-member leader">
+                    <span>NGÔ MINH NAM</span>
+                    <span class="role">(Nhóm Trưởng)</span>
+                </div>
+                <div class="team-member">
+                    <span>LÊ THÁI HOÀNG SƠN</span>
+                    <span class="role">(CNTT)</span>
+                </div>
+                <div class="team-member">
+                    <span>LÊ KIM BẠCH MAI</span>
+                    <span class="role">Thành viên</span>
+                </div>
+                <div class="team-member">
+                    <span>TRẦN THỊ KIM TRÚC</span>
+                    <span class="role">Thành viên</span>
+                </div>
+                <div class="team-member">
+                    <span>NGUYỄN THỊ HUẾ</span>
+                    <span class="role">Thành viên</span>
+                </div>
+                <div class="team-member">
+                    <span>NGUYỄN ĐỨC BÌNH MINH</span>
+                    <span class="role">(CNTT)</span>
+                </div>
+                <div class="team-member">
+                    <span>LÊ NGỌC ĐIỀU</span>
+                    <span class="role">Thành viên</span>
+                </div>
+                <div class="team-member">
+                    <span>TĂNG THỊ MỸ DUYÊN</span>
+                    <span class="role">Thành viên</span>
+                </div>
+                <div class="team-member">
+                    <span>TRẦN MINH SANG</span>
+                    <span class="role">Thành viên</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © 2026 Bản quyền thuộc về Chi Đoàn 11A4 - Nhóm 1 • Xuất bản dạng Ebook Web
+        </footer>
+    </div>
+
+</body>
+</html>
