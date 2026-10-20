@@ -11,8 +11,8 @@
             --secondary-color: #d4af37;
             --bg-color: #fdfbf7;
             --card-bg: #ffffff;
-            --text-color: #2c2c2c;
-            --border-color: #e0dacc;
+            --text-color: #111111; /* Đã chuyển sang màu đen đượm */
+            --border-color: #c5bead; /* Đậm nét đường viền hơn */
         }
 
         * {
@@ -32,12 +32,12 @@
 
         header {
             background-color: var(--primary-color);
-            color: #fff;
+            color: #ffffff;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         .nav-container {
@@ -53,7 +53,7 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 1.1rem;
-            color: var(--secondary-color);
+            color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -64,7 +64,7 @@
             background: var(--card-bg);
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
             border: 1px solid var(--border-color);
         }
 
@@ -75,19 +75,20 @@
             margin-bottom: 30px;
         }
 
+        /* Chuyển chữ phụ đề sang màu đen đậm */
         .sub-header {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #666;
-            letter-spacing: 2px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             margin-bottom: 12px;
         }
 
         .main-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
+            font-size: 2.1rem;
             color: var(--primary-color);
             margin-bottom: 12px;
             line-height: 1.3;
@@ -105,7 +106,7 @@
 
         /* Danh sách thành viên nhóm tác giả */
         .team-section {
-            background-color: #faf8f5;
+            background-color: #f7f4ee;
             padding: 30px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
@@ -116,9 +117,10 @@
             text-align: center;
             color: var(--primary-color);
             margin-bottom: 20px;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .team-grid {
@@ -128,34 +130,40 @@
         }
 
         .team-member {
-            background: #fff;
+            background: #ffffff;
             padding: 12px 16px;
             border-radius: 5px;
-            border: 1px solid #eee;
+            border: 1px solid #c0c0c0;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.95rem;
+            color: #000000;
+            font-weight: 600;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .team-member.leader {
-            border-left: 4px solid var(--primary-color);
+            border-left: 5px solid var(--primary-color);
             font-weight: 700;
             background: #fffdfa;
         }
 
+        /* Vai trò vai trò chuyển thành đen rõ hơn */
         .role {
-            color: #777;
-            font-size: 0.85rem;
+            color: #222222;
+            font-size: 0.88rem;
+            font-weight: 600;
         }
 
+        /* Chữ bản quyền cuối trang đen rõ nét */
         footer {
             text-align: center;
             padding: 20px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            color: #777;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #111111;
             margin-top: 30px;
         }
 
@@ -178,7 +186,7 @@
     <header>
         <div class="nav-container">
             <div class="logo">Chi Đoàn 11A4 • Nhóm 1</div>
-            <div style="font-family: 'Montserrat'; font-size: 0.85rem; color: #fff;">Báo Cáo Điện Tử</div>
+            <div style="font-family: 'Montserrat'; font-size: 0.88rem; color: #ffffff; font-weight: 600;">Báo Cáo Điện Tử</div>
         </div>
     </header>
 
