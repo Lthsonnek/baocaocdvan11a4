@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Báo Cáo Nghiên Cứu Văn Học Trung Đại - Chi Đoàn 11A4 Nhóm 1</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Thư viện tạo mã QR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         :root {
             --primary-color: #8b0000;
@@ -26,10 +28,10 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.8;
-            padding: 0;
+            user-select: none; /* Khóa bôi đen văn bản cơ bản */
+            -webkit-user-select: none;
         }
 
-        /* Header & Navigation */
         header {
             background-color: var(--primary-color);
             color: #fff;
@@ -58,7 +60,6 @@
             letter-spacing: 1px;
         }
 
-        /* Container Chính */
         .main-container {
             max-width: 850px;
             margin: 30px auto;
@@ -69,7 +70,6 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Trang Bìa */
         .cover-page {
             text-align: center;
             border-bottom: 2px double var(--border-color);
@@ -108,7 +108,6 @@
             text-align: left;
         }
 
-        /* Nội dung Báo cáo */
         .content-section {
             margin-bottom: 40px;
         }
@@ -143,6 +142,15 @@
             text-align: center;
             margin-bottom: 8px;
             font-size: 1.1rem;
+        }
+
+        /* Khung Ebook Flipbook */
+        .ebook-container {
+            margin: 40px 0;
+            background: #fff;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
         }
 
         /* Danh sách thành viên */
@@ -190,7 +198,36 @@
             font-size: 0.85rem;
         }
 
-        /* Footer */
+        /* Khu vực tạo QR Code */
+        .qr-section {
+            margin-top: 40px;
+            text-align: center;
+            background: #fcf8f2;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .qr-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        #qrcode {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        #qrcode img {
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -200,17 +237,13 @@
             margin-top: 40px;
         }
 
-        /* Responsive Mobile */
         @media (max-width: 600px) {
             .main-container {
-                padding: 20px 20px;
+                padding: 20px;
                 margin: 10px;
             }
             .main-title {
                 font-size: 1.6rem;
-            }
-            .topic-title {
-                font-size: 1.1rem;
             }
         }
     </style>
@@ -240,7 +273,7 @@
         <!-- NỘI DUNG BÁO CÁO -->
         <section class="content-section">
             <h2>I. Đặt Vấn Đề</h2>
-            <p>Trong dòng chảy của văn học trung đại Việt Nam, Hồ Xuân Hương nổi lên như một hiện tượng độc đáo — "Bà chúa Thơ Nôm". Bài thơ <em>Bánh trôi nước</em> là một tác phẩm tiêu biểu cho tài năng sáng tạo nghệ thuật và tinh thần nhân đạo sâu sắc của bà, thông qua hình ảnh một món ăn dân dã để gửi gắm nhiều tầng ý nghĩa sâu xa.</p>
+            <p>Trong dòng chảy của văn học trung đại Việt Nam, Hồ Xuân Hương nổi lên như một hiện tượng độc đáo — "Bà chúa Thơ Nôm". Bài thơ <em>Bánh trôi nước</em> là một tác phẩm tiêu biểu cho tài năng sáng tạo nghệ thuật và tinh thần nhân đạo sâu sắc của bà.</p>
 
             <div class="poem-box">
                 <p><strong>Bánh Trôi Nước</strong></p>
@@ -250,21 +283,16 @@
                 <p>Mà em vẫn giữ tấm lòng son.</p>
             </div>
 
-            <h2>II. Tầng Ý Nghĩa Tự Nhiên (Nghĩa Thực)</h2>
-            <p>Ở tầng nghĩa thứ nhất, bài thơ mô tả chân thực quy trình làm và đặc điểm của chiếc bánh trôi nước — một món ăn truyền thống của người Việt:</p>
-            <p>• <strong>Hình dáng:</strong> Viên bánh được nặn bằng bột bột nếp có màu trắng, hình dáng tròn trịa (<em>"vừa trắng lại vừa tròn"</em>).</p>
-            <p>• <strong>Cách luộc bánh:</strong> Khi thả vào nồi nước sôi, bánh chìm xuống rồi nổi lên khi đã chín (<em>"Bảy nổi ba chìm"</em>).</p>
-            <p>• <strong>Kỹ thuật nặn:</strong> Bánh mềm hay cứng, tròn hay méo phụ thuộc hoàn toàn vào tay người nhào bột và nặn bánh (<em>"Rắn nát mặc dầu tay kẻ nặn"</em>).</p>
-            <p>• <strong>Nhân bánh:</strong> Bên trong viên bánh là viên đường phay (đường thốt nốt/đường mật) có màu đỏ hồng (<em>"tấm lòng son"</em>).</p>
+            <h2>II. Tầng Ý Nghĩa Tự Nhiên & Ẩn Dụ</h2>
+            <p>Bài thơ mang hai tầng ý nghĩa song song: Vừa tả thực quy trình làm bánh trôi nước truyền thống, vừa là bức chân dung tượng trưng cho vẻ đẹp, phẩm chất cao quý cùng số phận chìm nổi, lênh đênh nhưng vẫn giữ vững tấm lòng son sắt của người phụ nữ Việt Nam trong xã hội phong kiến.</p>
+        </section>
 
-            <h2>III. Tầng Ý Nghĩa Ẩn Dụ (Nghĩa Biểu Tượng)</h2>
-            <p>Bên cạnh nghĩa thực, ẩn sau hình ảnh chiếc bánh trôi nước là tầng ý nghĩa nhân văn sâu sắc về vẻ đẹp và số phận của người phụ nữ trong xã hội phong kiến:</p>
-            <p><strong>1. Tôn vinh vẻ đẹp hình thức và tâm hồn:</strong> Mở đầu bằng cụm từ xưng hô truyền thống <em>"Thân em"</em>, Hồ Xuân Hương ca ngợi vẻ đẹp ngoại hình đầy đặn, duyên dáng và tâm hồn thủy chung, sắt son, thuần khiết của người phụ nữ.</p>
-            <p><strong>2. Phản ánh số phận chìm nổi, lệ thuộc:</strong> Thành ngữ <em>"bảy nổi ba chìm"</em> diễn tả số phận lênh đênh, gian ân và không có quyền tự quyết định cuộc đời mình trong xã hội trọng nam khinh nữ. Cuộc đời họ vui hay buồn, hạnh phúc hay khổ đau hoàn toàn bị phụ thuộc vào sự định đoạt của kẻ khác.</p>
-            <p><strong>3. Khẳng định bản lĩnh và phẩm chất cao quý:</strong> Dù đối mặt với nghịch cảnh, người phụ nữ vẫn giữ vững "tấm lòng son" — sự chung thủy, dũng cảm và lòng tự trọng cao đẹp.</p>
-
-            <h2>IV. Kết Luận</h2>
-            <p>Bằng thể thơ thất ngôn tứ tuyệt đường luật ngắn gọn, ngôn ngữ Nom bình dị cùng nghệ thuật ẩn dụ đa tầng, bài thơ <em>Bánh trôi nước</em> không chỉ tôn vinh món ăn dân tộc mà còn là bài ca nhân đạo sâu sắc, cất lên tiếng nói đòi quyền sống và trân trọng phẩm giá người phụ nữ Việt Nam xưa.</p>
+        <!-- KHUNG SÁCH LẬT EBOOK (HEYZINE) -->
+        <section class="ebook-container">
+            <h2 style="margin-top: 0; text-align: center; font-size: 1.2rem;">📖 Sách Lật Trực Tuyến (Ebook)</h2>
+            <div class="heyzine-flipbook" style="width: 100%; height: 600px;">
+                <a href="https://heyzine.com/flip-book/2bf20b998b.html">View the flipbook</a>
+            </div>
         </section>
 
         <!-- TRANG THÀNH VIÊN NHÓM -->
@@ -293,7 +321,7 @@
                 </div>
                 <div class="team-member">
                     <span>NGUYỄN ĐỨC BÌNH MINH</span>
-                    <span class="role">(CNTT)</span>
+                    <span class="role">Thành viên</span>
                 </div>
                 <div class="team-member">
                     <span>LÊ NGỌC ĐIỀU</span>
@@ -310,10 +338,52 @@
             </div>
         </section>
 
+        <!-- TỰ ĐỘNG TẠO MÃ QR TỪ LINK TRANG WEB -->
+        <section class="qr-section">
+            <h3>Mã QR Truy Cập Nhanh Trang Web</h3>
+            <p style="font-size: 0.9rem; color: #555;">Quét mã bên dưới bằng điện thoại để mở trực tiếp báo cáo:</p>
+            <div id="qrcode"></div>
+        </section>
+
         <footer>
-            © 2026 Bản quyền thuộc về Chi Đoàn 11A4 - Nhóm 1 • Xuất bản dạng Ebook Web
+            © 2026 Bản quyền thuộc về Chi Đoàn 11A4 - Nhóm 1 • Ebook Báo Cáo Văn Học
         </footer>
     </div>
 
+    <!-- Script nhúng Heyzine -->
+    <script async src="https://heyzine.com/release/embed.min.js"></script>
+
+    <!-- Script bảo mật & tự động tạo QR -->
+    <script>
+        // 1. Tự động tạo mã QR dựa vào URL hiện tại của trang web
+        window.addEventListener('DOMContentLoaded', (event) => {
+            var currentUrl = window.location.href;
+            new QRCode(document.getElementById("qrcode"), {
+                text: currentUrl,
+                width: 150,
+                height: 150,
+                colorDark: "#8b0000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        });
+
+        // 2. Chống nhấn chuột phải
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // 3. Chống phím tắt F12, Ctrl+U, Ctrl+S, Ctrl+C
+        document.addEventListener('keydown', function(e) {
+            if (
+                e.keyCode === 123 || // F12
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || 
+                (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 67 || e.keyCode === 65))
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>
 </body>
 </html>
